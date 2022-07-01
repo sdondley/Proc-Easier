@@ -138,9 +138,9 @@ command will be immediately executed.
 
 
 
-=head3 multi sub autodie(Bool :$off) is export { $autodie = !$off; }
+=head3 multi sub autodie(Bool :$off)
 
-=head3 multi sub autodie(Bool :$on)  is export { $autodie = $on; }
+=head3 multi sub autodie(Bool :$on)
 
 =begin code
 autodie(:on);
