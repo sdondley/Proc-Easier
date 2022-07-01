@@ -43,7 +43,7 @@ method run() {
 }
 
 method gist {
-    my @out;;
+    my @out;
     push @out, (sprintf "Command '%s': returned with exit code '%d'.", self.cmd.Str, $!exit).Str;
     push @out, (sprintf 'Called from: \'%s\', line %s', $!file, $!line).Str;
     push @out, sprintf "\nERROR: %s", $!err if $!err;
@@ -154,8 +154,7 @@ behave as if the C<:die> feature has been turned on or off. Default is off.
 
 =head2 Object methods
 
-=head3 new( Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy = False )
-
+=head3 C<new (Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy )>
 Accepts the same four named variables as the C<cmd> convenience method.
 
 =head3 run()
