@@ -1,25 +1,23 @@
 {
-  "auth": "zef:sdondley",
+  "name": "Proc::Easier",
+  "description": "run processes with OO goodness",
+  "version": "0.0.1",
+  "perl": "6.d",
   "authors": [
     "Steve Dondley"
   ],
-  "build-depends": [
+  "auth": "zef:sdondley",
+  "depends": [],
+  "build-depends": [],
+  "test-depends": [
+    "Test",
+    "Test::Output"
   ],
-  "depends": [
-  ],
-  "description": "run processes with OO goodness",
-  "license": "Artistic-2.0",
-  "name": "Proc::Easier",
-  "perl": "6.d",
   "provides": {
     "Proc::Easier": "lib/Proc/Easier.rakumod"
   },
-  "resources": [
-  ],
-  "source-url": "https://github.com/sdondley/Proc-Easier.git",
-  "tags": [
-  ],
-  "test-depends": [
-  ],
-  "version": "0.0.1"
+  "resources": [],
+  "license": "Artistic-2.0",
+  "tags": [],
+  "source-url": "https://github.com/sdondley/Proc-Easier.git"
 }
