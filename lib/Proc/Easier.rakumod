@@ -193,7 +193,7 @@ Contains the original command.
 
 The directory where the command will be execute.
 
-=heda3 has Bool $.die   is rw;
+=head3 has Bool $.die   is rw;
 
 Whether the command will die if an error is encountered.
 
