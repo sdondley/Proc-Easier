@@ -1,20 +1,25 @@
 {
-   "authors" : [
-      "Steve Dondley"
-   ],
-   "provides" : {
-      "Proc::Easier" : "lib/Proc/Easier.rakumod"
-   },
-   "auth" : "zef:sdondley",
-   "depends" : [],
-   "version" : "0.0.1",
-   "source-url" : "https://github.com/sdondley/Proc-Easier.git",
-   "build-depends" : [],
-   "description" : "blah blah blah",
-   "name" : "Proc::Easier",
-   "license" : "Artistic-2.0",
-   "resources" : [],
-   "tags" : [],
-   "test-depends" : [],
-   "perl" : "6.d"
+  "auth": "zef:sdondley",
+  "authors": [
+    "Steve Dondley"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "run processes with OO goodness",
+  "license": "Artistic-2.0",
+  "name": "Proc::Easier",
+  "perl": "6.d",
+  "provides": {
+    "Proc::Easier": "lib/Proc/Easier.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/sdondley/Proc-Easier.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
 }
