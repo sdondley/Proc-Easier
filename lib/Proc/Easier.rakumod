@@ -122,7 +122,7 @@ interface to make issuing commands from Raku much easier.
 
 =head2 Class methods
 
-=head3 cmd ($cmd, :$dir = '', :$die = False, $:lazy = False)
+=head3 cmd ($cmd, :$dir = '', :$die = False, :$lazy = False)
 
 =begin code
 cmd('ls', '/some/dir', :die);
