@@ -154,7 +154,7 @@ behave as if the C<:die> feature has been turned on or off. Default is off.
 
 =head2 Object methods
 
-=head3 new(Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy = False)
+=head3 new( Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy = False )
 
 Accepts the same four named variables as the C<cmd> convenience method.
 
@@ -193,7 +193,7 @@ Contains the original command.
 
 The directory where the command will be execute.
 
-has Bool $.die   is rw;
+=heda3 has Bool $.die   is rw;
 
 Whether the command will die if an error is encountered.
 
@@ -205,8 +205,8 @@ Steve Dondley <s@dondley.com>
 =head1 ACKNOWLEDGEMENTS
 
 Thanks to tbrowder for the C<Proc::Easy> distribution which
-shamelessly inspired the name of this module as well some inspiration and
-recycled code to boot.
+shamelessly inspired the name of this module and furnished some code
+and ideas to recycle, too.
 
 =head1 COPYRIGHT AND LICENSE
 
