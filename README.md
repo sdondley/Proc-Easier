@@ -79,7 +79,7 @@ Turns on/off the autodie switch. All subsequent `Proc::Easier` commands will beh
 Object methods
 --------------
 
-### new(Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy = False)
+### new( Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy = False )
 
 Accepts the same four named variables as the `cmd` convenience method.
 
@@ -118,6 +118,9 @@ Contains the original command.
 
 The directory where the command will be execute.
 
+heda3
+=====
+
 has Bool $.die is rw;
 
 Whether the command will die if an error is encountered.
@@ -130,7 +133,7 @@ Steve Dondley <s@dondley.com>
 ACKNOWLEDGEMENTS
 ================
 
-Thanks to tbrowder for the `Proc::Easy` distribution which shamelessly inspired the name of this module as well some inspiration and recycled code to boot.
+Thanks to tbrowder for the `Proc::Easy` distribution which shamelessly inspired the name of this module and furnished some code and ideas to recycle, too.
 
 COPYRIGHT AND LICENSE
 =====================
