@@ -61,7 +61,7 @@ PROC::EASIER Class
 Class methods
 -------------
 
-### cmd($cmd, :$dir = '', :$die = False: $:lazy = False)
+### sub cmd ( Str $cmd, Bool :$dir = '', Bool :$die = False, Bool :$lazy = False )
 
     cmd('ls', '/some/dir', :die);
 
