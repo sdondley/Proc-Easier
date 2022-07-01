@@ -2,7 +2,7 @@ use Test;
 use Test::Output;
 use Proc::Easier;
 
-plan 12;
+plan 13;
 
 lives-ok { Proc::Easier.new(cmd => 'ls', :lazy) }, 'creates object using standard constructor notation';
 lives-ok { cmd 'ls' }, 'creates object using simplified interface';
@@ -22,5 +22,7 @@ autodie :on;
 dies-ok { cmd 'kjkjsdfxxxxx' }, 'autodie on works';
 autodie :off;
 lives-ok { cmd 'kjkjsdfxxxxx' }, 'autodie off works';
+
+lives-ok { cmd 'ls', :die }, 'issues a real command';
 
 done-testing;
