@@ -19,6 +19,7 @@ sub cmd($cmd, :$dir = '', :$die = False, :$lazy = False) is export {
 
 submethod BUILD(Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy) { self.run if !$lazy }
 
+# todo catch errors if frame we are not looking for is not found
 method !caller-info() {
     my $frame-counter = 2;
     while callframe($frame-counter++).file !~~ /^^SETTING.*/ { }
@@ -35,8 +36,8 @@ method run() {
     $!exit = $proc.exitcode;
     $!err  = $proc.err.slurp(:close);
     $!out  = $proc.out.slurp(:close);
-    if self.die || $autodie {
-        self.gist() if $!exit;
+    if (self.die || $autodie) && $!exit {
+        self.gist;
         die;
     }
     return self;
@@ -58,9 +59,6 @@ method exitcode() { $!exit }
 method caller-file() { $!file }
 method caller-line() { $!line }
 
-
-# todo write pod
-# todo write acknowledgements
 =begin pod
 
 =head1 NAME
