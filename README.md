@@ -67,9 +67,9 @@ Class methods
 
 Convenience method for constructing a `Proc::Easier` object. Accepts a command, an optional directory command to run the command from, an an option to die if an error is encountered, and an optoin to make the command "lazy." Lazy commands will not be executed unless the run method is called on the object. Otherwise, oonce the object is constructed, the command will be immediately executed.
 
-### multi sub autodie(Bool :$off) is export { $autodie = !$off; }
+### multi sub autodie(Bool :$off)
 
-### multi sub autodie(Bool :$on) is export { $autodie = $on; }
+### multi sub autodie(Bool :$on)
 
     autodie(:on);
     autodie(:off);
