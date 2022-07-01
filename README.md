@@ -79,9 +79,7 @@ Turns on/off the autodie switch. All subsequent `Proc::Easier` commands will beh
 Object methods
 --------------
 
-### new( Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy = False )
-
-Accepts the same four named variables as the `cmd` convenience method.
+### `new (Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy )` Accepts the same four named variables as the `cmd` convenience method.
 
 ### run()
 
