@@ -154,7 +154,7 @@ behave as if the C<:die> feature has been turned on or off. Default is off.
 
 =head2 Object methods
 
-=head3 C<new (Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy )>
+=head3 method new( Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy )
 
 Accepts the same four named variables as the C<cmd> convenience method.
 
