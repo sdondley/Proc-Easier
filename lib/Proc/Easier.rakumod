@@ -49,8 +49,7 @@ method gist {
     push @out, (sprintf 'Called from: \'%s\', line %s', $!file, $!line).Str;
     push @out, sprintf "\nERROR: %s", $!err if $!err;
     push @out, sprintf "\nOUTPUT:\n%s", $!out if $!out;
-    my $out = @out.join: "\n";
-    return $out.Str
+    @out.join: "\n";
 }
 
 method err() { $!err || ''}
