@@ -76,7 +76,7 @@ use Proc::Easier;
 # run a command
 cmd('ls');
 
-# run command and assign resultant Proc::Easier object to a value
+# run command and assign resultant Proc::Easier object to a scalar
 my $cmd = cmd('ls');
 
 # get info about the object
@@ -107,8 +107,10 @@ cmd('kjkjsdkjf');   # this dies
 autodie(:off);
 cmd('kjkjsdkjf');   # this doesn't die
 
-# create a command using traditional OO and run it
-my $cmd= Proc::Easier.new(cmd => 'ls);
+# create a command with standar OO, don't run it immediately
+my $cmd= Proc::Easier.new(cmd => 'ls', :lazy);
+
+# run the command
 $cmd.run;
 
 =end code
