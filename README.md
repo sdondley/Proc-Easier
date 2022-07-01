@@ -45,7 +45,7 @@ cmd('kjkjsdkjf');   # this dies
 autodie(:off);
 cmd('kjkjsdkjf');   # this doesn't die
 
-# create a command with standar OO, don't run it immediately
+# create a command with standard OO, don't run it immediately
 my $cmd= Proc::Easier.new(cmd => 'ls', :lazy);
 
 # run the command

@@ -1,6 +1,8 @@
 Revision history for Proc-Easier
 
 {{$NEXT}}
+    - bug fix to prevent all commands from dying with :die enabled
+    - doc tweaks
 
 0.0.2  2022-07-01T00:35:35-04:00
     - doc fixes
