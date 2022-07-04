@@ -1,6 +1,8 @@
 Revision history for Proc-Easier
 
 {{$NEXT}}
+
+0.0.4  2022-07-03T20:29:35-04:00
     - tighten up code
     - ensure correct line/file number returned with 'run' command
 
