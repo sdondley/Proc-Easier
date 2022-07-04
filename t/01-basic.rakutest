@@ -4,25 +4,26 @@ use Proc::Easier;
 
 plan 13;
 
-lives-ok { Proc::Easier.new(cmd => 'ls', :lazy) }, 'creates object using standard constructor notation';
-lives-ok { cmd 'ls' }, 'creates object using simplified interface';
-
-is (cmd 'ls').cmd, 'ls', 'cmd attribute set';
-is cmd('ls', :lazy).out, '', 'lazy works';
-like cmd('ls').out, /README/, 'sets/get output';
+#lives-ok { Proc::Easier.new(cmd => 'ls', :lazy) }, 'creates object using standard constructor notation';
+#lives-ok { cmd 'ls' }, 'creates object using simplified interface';
+#
+#is (cmd 'ls').cmd, 'ls', 'cmd attribute set';
+#is cmd('ls', :lazy).out, '', 'lazy works';
+#like cmd('ls').out, /README/, 'sets/get output';
 my $cmd = cmd 'ls';
 is $cmd.caller-line, 13, 'get calling line number';
-like $cmd.caller-file, /01\-basic\.rakutest/, 'get calling file name';
-
-stdout-like { say $cmd }, rx:s/returned with exit code/, 'does gist';
-dies-ok { cmd 'kjkjsdfxxxxx', :die }, 'dies with bad command with :die';
-lives-ok { cmd 'kjkjsdfxxxxx' }, 'deos not die with bad command, without :die';
-
-autodie :on;
-dies-ok { cmd 'kjkjsdfxxxxx' }, 'autodie on works';
-autodie :off;
-lives-ok { cmd 'kjkjsdfxxxxx' }, 'autodie off works';
-
-lives-ok { cmd 'ls', :die }, 'issues a real command';
+#like $cmd.caller-file, /01\-basic\.rakutest/, 'get calling file name';
+#stdout-like { say $cmd }, rx:s/returned with exit code/, 'does gist';
+$cmd = (cmd 'ls', :lazy).run;
+is $cmd.caller-line, 17, 'get calling line number';
+#dies-ok { cmd 'kjkjsdfxxxxx', :die }, 'dies with bad command with :die';
+#lives-ok { cmd 'kjkjsdfxxxxx' }, 'deos not die with bad command, without :die';
+#
+#autodie :on;
+#dies-ok { cmd 'kjkjsdfxxxxx' }, 'autodie on works';
+#autodie :off;
+#lives-ok { cmd 'kjkjsdfxxxxx' }, 'autodie off works';
+#
+#lives-ok { cmd 'ls', :die }, 'issues a real command';
 
 done-testing;
