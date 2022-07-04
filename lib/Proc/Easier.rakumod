@@ -21,10 +21,16 @@ submethod BUILD(Str:D :$!cmd, Str :$!dir = '', Bool :$!die = False, Bool :$lazy)
 
 # todo catch errors if frame we are not looking for is not found
 method !caller-info() {
-    my $frame-counter = 2;
-    while callframe($frame-counter++).file !~~ /^^SETTING.*/ { }
-    $frame-counter++;
-    return callframe($frame-counter).line,callframe($frame-counter).file;
+    my @bt = Backtrace.new.list;
+
+    my $f = { $^a.file.starts-with('SETTING') && !$^a.file.contains('Backtrace') };
+    my $index = @bt.first: $f, :k;
+    return @bt[$index + 2].line.Str, @bt[$index + 2].file if $index;
+
+    # for when the 'run' method is called directly
+    my $g = { $^a.subname eq 'run' };
+    $index = @bt.first: $g, :k;
+    return @bt[$index+1].line.Str, @bt[$index+1].file if $index;
 }
 
 method run() {
