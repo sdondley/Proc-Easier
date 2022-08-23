@@ -9,12 +9,12 @@ lives-ok { cmd 'ls' }, 'creates object using simplified interface';
 
 if $*DISTRO.is-win {
     is (cmd 'cmd.exe /c dir').cmd, 'cmd.exe /c dir', 'cmd attribute set';
+    like cmd('cmd.exe /c dir').out, /README/, 'sets/get output';
 } else {
     is (cmd 'ls').cmd, 'ls', 'cmd attribute set';
+    like cmd('ls').out, /README/, 'sets/get output';
 }
-
 is cmd('ls', :lazy).out, '', 'lazy works';
-like cmd('ls').out, /README/, 'sets/get output';
 my $cmd = cmd 'ls';
 is $cmd.caller-line, 18, 'get calling line number';
 like $cmd.caller-file, /01\-basic\.rakutest/, 'get calling file name';
