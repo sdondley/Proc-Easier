@@ -61,6 +61,7 @@ method gist {
 method err() { $!err || ''}
 method out() { $!out || '' }
 method exitcode() { $!exit }
+method exit() { self.exitcode() }
 method caller-file() { $!file }
 method caller-line() { $!line }
 
@@ -176,6 +177,7 @@ Returns the string from stdout, if any.
 Returns the string from stderr, if any.
 
 =head3 exitcode()
+=head3 exit()
 
 Returns the exit code from the shell, '0' indicates success, other
 numbers indicate an error.

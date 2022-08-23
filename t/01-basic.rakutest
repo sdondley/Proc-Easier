@@ -2,7 +2,7 @@ use Test;
 use Test::Output;
 use Proc::Easier;
 
-plan 14;
+plan 16;
 
 lives-ok { Proc::Easier.new(cmd => 'ls', :lazy) }, 'creates object using standard constructor notation';
 lives-ok { cmd 'ls' }, 'creates object using simplified interface';
@@ -16,11 +16,13 @@ if $*DISTRO.is-win {
 }
 is cmd('ls', :lazy).out, '', 'lazy works';
 my $cmd = cmd 'ls';
+lives-ok { $cmd.exit }, 'has exit method';
+lives-ok { $cmd.exitcode }, 'has exit method';
 is $cmd.caller-line, 18, 'get calling line number';
 like $cmd.caller-file, /01\-basic\.rakutest/, 'get calling file name';
 stdout-like { say $cmd }, rx:s/returned with exit code/, 'does gist';
 $cmd = (cmd 'ls', :lazy).run;
-is $cmd.caller-line, 22, 'get calling line number';
+is $cmd.caller-line, 24, 'get calling line number';
 dies-ok { cmd 'kjkjsdfxxxxx', :die }, 'dies with bad command with :die';
 lives-ok { cmd 'kjkjsdfxxxxx' }, 'deos not die with bad command, without :die';
 

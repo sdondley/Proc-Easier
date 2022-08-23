@@ -99,6 +99,8 @@ Returns the string from stderr, if any.
 
 ### exitcode()
 
+### exit()
+
 Returns the exit code from the shell, '0' indicates success, other numbers indicate an error.
 
 ### caller-file()
