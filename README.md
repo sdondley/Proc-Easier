@@ -37,11 +37,11 @@ cmd('ls', '/home/dir');
 # run a command, die if error encountered, then print info
 cmd('a-bad-command', :die);
 
-# make :die the default for all commands until its turned off
+# make :die the default for all commands until it's turned off
 autodie(:on);
 cmd('kjkjsdkjf');   # this dies
 
-# turn off :die until its turned back on
+# turn off :die until it's turned back on
 autodie(:off);
 cmd('kjkjsdkjf');   # this doesn't die
 
@@ -67,7 +67,7 @@ Class methods
 
     cmd('ls', '/some/dir', :die);
 
-Convenience method for constructing a `Proc::Easier` object. Accepts a command, an optional directory command to run the command from, an an option to die if an error is encountered, and an optoin to make the command "lazy." Lazy commands will not be executed unless the run method is called on the object. Otherwise, oonce the object is constructed, the command will be immediately executed.
+Convenience method for constructing a `Proc::Easier` object. Accepts a command, an optional directory command to run the command from, an option to die if an error is encountered, and an option to make the command "lazy." Lazy commands will not be executed unless the run method is called on the object. Otherwise, once the object is constructed, the command will be immediately executed.
 
 ### multi sub autodie(Bool :$off)
 
